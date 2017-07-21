@@ -70,11 +70,11 @@ a:active, a:hover {
     top: 50%;
     margin-top: 20px;
     background: none;
-    transform: translateY( -50%);
     -webkit-transform: translateY( -50%);
     -moz-transform: translateY( -50%);
     -ms-transform: translateY( -50%);
     -o-transform: translateY( -50%);
+    transform: translateY( -50%);
 }
 
 #big_name {
@@ -149,11 +149,11 @@ a:active, a:hover {
     opacity: 0.25;
     filter: alpha(opacity=25);
     /* For IE8 and earlier */
-    transition: opacity 0.25s ease-out;
     -webkit-transition: opacity 0.25s ease-out;
     -moz-transition: opacity 0.25s ease-out;
     -ms-transition: opacity 0.25s ease-out;
     -o-transition: opacity 0.25s ease-out;
+    transition: opacity 0.25s ease-out;
 }
 
 .button_white:hover, .button_black:hover {
@@ -395,9 +395,9 @@ h2>small {
 }
 
 .portfolio_container img {
-    box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    box-sizing: border-box;
     width: 32%;
     height: 32%;
     padding: 1.5%;
@@ -409,11 +409,11 @@ h2>small {
     opacity: 0.35;
     filter: alpha(opacity=35);
     /* For IE8 and earlier */
-    transition: opacity 0.25s ease-out;
     -webkit-transition: opacity 0.25s ease-out;
     -moz-transition: opacity 0.25s ease-out;
     -ms-transition: opacity 0.25s ease-out;
     -o-transition: opacity 0.25s ease-out;
+    transition: opacity 0.25s ease-out;
     cursor: pointer;
 }
 
@@ -583,11 +583,11 @@ a.icon {
     opacity: 0.25;
     filter: alpha(opacity=25);
     /* For IE8 and earlier */
-    transition: opacity 0.25s ease-out;
     -webkit-transition: opacity 0.25s ease-out;
     -moz-transition: opacity 0.25s ease-out;
     -ms-transition: opacity 0.25s ease-out;
     -o-transition: opacity 0.25s ease-out;
+    transition: opacity 0.25s ease-out;
 }
 
 a.icon:hover {
@@ -638,9 +638,9 @@ a.icon:not(:first-child) {
     margin-top: 3vh;
     padding: 3px;
     border: 1px solid #666;
-    box-shadow: 0px 0px 3px #333;
     -webkit-box-shadow: 0px 0px 3px #333;
     -moz-box-shadow: 0px 0px 3px #333;
+    box-shadow: 0px 0px 3px #333;
 }
 
 
@@ -753,9 +753,9 @@ nav a {
         left: 13px;
         border: 1px solid rgba(255, 255, 255, 1);
         border-radius: 0;
-        box-shadow: none;
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
+        box-shadow: none;
     }
     .dropdown-menu>li>a, .dropdown-menu>li>a:link, .dropdown-menu>li>a:visited {
         color: #fff;
@@ -794,11 +794,11 @@ nav a {
     opacity: 0.20;
     filter: alpha(opacity=20);
     /* For IE8 and earlier */
-    transition: opacity 0.20s ease-out;
     -webkit-transition: opacity 0.20s ease-out;
     -moz-transition: opacity 0.20s ease-out;
     -ms-transition: opacity 0.20s ease-out;
     -o-transition: opacity 0.20s ease-out;
+    transition: opacity 0.20s ease-out;
 }
 
 .navbar:hover, .navbar-default:hover, #scroll_back_button:hover {
@@ -838,10 +838,14 @@ nav a {
 }
 
 .slide {
-    animation-name: slide;
     -webkit-animation-name: slide;
-    animation-duration: 1s;
+    -moz-animation-name: slide;
+    -o-animation-name: slide;
+    animation-name: slide;
     -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
     visibility: visible;
 }
 
@@ -868,14 +872,14 @@ nav a {
 }
 
 .slide_left {
-    animation-name: slide_left;
     -webkit-animation-name: slide_left;
     -moz-animation-name: slide_left;
     -o-animation-name: slide_left;
-    animation-duration: 1s;
+    animation-name: slide_left;
     -webkit-animation-duration: 1s;
     -moz-animation-duration: 1s;
     -o-animation-duration: 1s;
+    animation-duration: 1s;
     visibility: visible;
 }
 
@@ -924,14 +928,14 @@ nav a {
 }
 
 .slide_right {
-    animation-name: slide_right;
     -webkit-animation-name: slide_right;
     -moz-animation-name: slide_right;
     -o-animation-name: slide_right;
-    animation-duration: 1s;
+    animation-name: slide_right;
     -webkit-animation-duration: 1s;
     -moz-animation-duration: 1s;
     -o-animation-duration: 1s;
+    animation-duration: 1s;
     visibility: visible;
 }
 
