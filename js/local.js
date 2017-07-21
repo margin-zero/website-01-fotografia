@@ -2,6 +2,7 @@ $(document).ready(function() {
 
     // kliknięcie na IMG w .portfolio_container pokazuje obrazek (MODAL) 
     $(".portfolio_container img").click(function() {
+        $(".modal_image, #modal_caption").removeClass("zoomout"); // upewniamy się, że elementy powiększenia nie mają klasy .zoomout
         $("#shuttersound").get(0).play(); // odtwarzamy dźwięk migawki 
         var bg = $(this).css("background-image"); // odczytujemy wartość background-image klikniętego obrazka...
         bg = bg.replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, ''); // ...  i wydostajemy z niej ścieżkę do pliku obrazka
@@ -13,7 +14,15 @@ $(document).ready(function() {
 
     // kliknięcie w obrazek na MODAL - zamyka modal 
     $("#modal_img").click(function() {
-        $("#modal_container").css("display", "none");
+        // odtwarzamy dźwięk kliknięcia 
+        $("#mousesound").get(0).play();
+
+        $(".modal_image, #modal_caption").addClass("zoomout");
+
+        setTimeout(function() {
+            $("#modal_container").css("display", "none");
+        }, 590);
+        // $("#modal_container").css("display", "none");
     })
 
 
