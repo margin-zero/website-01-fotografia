@@ -490,7 +490,7 @@
     <!-- / sekcja KONTAKT -->
 
 
-    <!-- Przycisk "scroll back" -->
+    <!-- Przycisk "scroll back / scroll top" -->
     <a href="#page_top" id="scroll_back_button"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
 
@@ -500,7 +500,7 @@
         <div id="modal_caption"></div>
     </div>
 
-    <!-- AUDIO - dźwięk migawki -->
+    <!-- AUDIO - dźwięk migawki i kliknięcia -->
     <audio id="shuttersound">
         <source src="sound/shutter_demo.mp3" type="audio/mpeg">
     </audio>
@@ -509,111 +509,13 @@
         <source src="sound/mouse_click.mp3" type="audio/mpeg">
     </audio>
 
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!--Pluginy Bootstrapa -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <script>
-        $(document).ready(function() {
-
-            // kliknięcie na IMG w .portfolio_container pokazuje obrazek (MODAL) 
-
-            $(".portfolio_container img").click(function() {
-
-                // odtwarzamy dźwięk migawki 
-                $("#shuttersound").get(0).play();
-                var bg = $(this).css("background-image");
-                bg = bg.replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
-
-                $("#modal_container").css("display", "block");
-                $('#modal_img').attr("src", bg);
-                $('#modal_caption').html($(this).attr("alt"));
-            });
-
-
-            // kliknięcie w obrazek na MODAL - zamyka modal 
-            $("#modal_img").click(function() {
-                $("#modal_container").css("display", "none");
-            })
-
-
-
-
-            // Add smooth scrolling to all links in navbar + footer link
-            $(".navbar a:not('.dropdown-toggle'), #scroll_back_button, .button_black, .button_white").on('click', function(event) {
-                // odtwarzamy dźwięk buttona 
-                $("#mousesound").get(0).play();
-                // Make sure this.hash has a value before overriding default behavior
-                if (this.hash !== "") {
-                    // Prevent default anchor click behavior
-                    event.preventDefault();
-
-                    // Store hash
-                    var hash = this.hash;
-
-                    // Using jQuery's animate() method to add smooth page scroll
-                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 900, function() {
-
-                        // Add hash (#) to URL when done scrolling (default click behavior)
-                        window.location.hash = hash;
-                    });
-                } // End if
-            });
-
-
-            // animacja elementów w momencie pojawienia się 
-            $(window).scroll(function() {
-                $(".slideanim.full_container").each(function() {
-                    var pos = $(this).offset().top;
-
-                    var winTop = $(window).scrollTop();
-                    if (pos < winTop + 600) {
-                        $(this).addClass("slide");
-                    }
-                });
-            });
-
-            $(window).scroll(function() {
-                $(".slideanim.left_container").each(function() {
-                    var pos = $(this).offset().top;
-
-                    var winTop = $(window).scrollTop();
-                    if (pos < winTop + 600) {
-                        $(this).addClass("slide_left");
-                    }
-                });
-
-                $(".slideanim.right_container").each(function() {
-                    var pos = $(this).offset().top;
-
-                    var winTop = $(window).scrollTop();
-                    if (pos < winTop + 600) {
-                        $(this).addClass("slide_right");
-                    }
-                });
-
-            });
-
-
-            // Testowanie pozycji okna podczas scrollowania - wyświetlanie i ukrywanie buttona "scroll top"
-            window.onscroll = function() {
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    document.getElementById("scroll_back_button").style.display = "block";
-                } else {
-                    document.getElementById("scroll_back_button").style.display = "none";
-                }
-            }
-
-
-
-
-        });
-    </script>
+    <!-- Lokalny JS -->
+    <script src="js/local.js"></script>
 
 
 </body>
